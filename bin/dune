@@ -1,0 +1,5 @@
+(executable
+ (public_name advent2020)
+ (name main)
+ (libraries core advent2020)
+ (preprocess (pps ppx_jane)))

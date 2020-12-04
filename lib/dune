@@ -1,0 +1,4 @@
+(library
+ (name advent2020)
+ (libraries core)
+ (preprocess (pps ppx_jane)))
