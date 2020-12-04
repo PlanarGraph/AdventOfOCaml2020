@@ -1,4 +1,4 @@
-# AdventOfOCaml2020
+# Advent of OCaml 2020
 My Advent of Code 2020 solutions in OCaml.
 
 Each day has a separate folder contained in the lib directory.
