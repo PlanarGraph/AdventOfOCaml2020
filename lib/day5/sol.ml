@@ -27,14 +27,13 @@ let parse_boarding_pass line =
     Returns the missing seat id. *)
 let find_seat passes =
   let spasses = List.sort passes ~compare:(fun a b -> compare a.id b.id) in
-  let seat = List.fold_until spasses 
-      ~init:((List.hd_exn spasses).id)
-      ~f:(fun prev cur ->
-        if cur.id - prev = 2 
-        then Stop (prev + 1)
-        else Continue cur.id)
-      ~finish:(fun x -> x)
-  in seat
+  List.fold_until spasses 
+    ~init:((List.hd_exn spasses).id)
+    ~f:(fun prev cur ->
+      if cur.id - prev = 2 
+      then Stop (prev + 1)
+      else Continue cur.id)
+    ~finish:(fun x -> x)
 
 let solution filename =
   let file = In_channel.create filename in
